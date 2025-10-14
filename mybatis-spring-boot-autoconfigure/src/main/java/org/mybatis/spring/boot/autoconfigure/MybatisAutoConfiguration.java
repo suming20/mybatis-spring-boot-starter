@@ -82,6 +82,7 @@ import org.springframework.util.StringUtils;
  */
 @org.springframework.context.annotation.Configuration
 @ConditionalOnClass({ SqlSessionFactory.class, SqlSessionFactoryBean.class })
+// 当前只有一个候选项
 @ConditionalOnSingleCandidate(DataSource.class)
 @EnableConfigurationProperties(MybatisProperties.class)
 @AutoConfigureAfter({ DataSourceAutoConfiguration.class, MybatisLanguageDriverAutoConfiguration.class })
@@ -224,6 +225,7 @@ public class MybatisAutoConfiguration implements InitializingBean {
    * {@link org.mybatis.spring.annotation.MapperScan} but this will get typed mappers working correctly, out-of-the-box,
    * similar to using Spring Data JPA repositories.
    */
+  // MapperScan  mapper文件的扫描
   public static class AutoConfiguredMapperScannerRegistrar
       implements BeanFactoryAware, EnvironmentAware, ImportBeanDefinitionRegistrar {
 

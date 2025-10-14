@@ -35,6 +35,7 @@ import org.springframework.core.io.support.ResourcePatternResolver;
  * @author Eddú Meléndez
  * @author Kazuki Shimizu
  */
+// mybatis配置信息
 @ConfigurationProperties(prefix = MybatisProperties.MYBATIS_PREFIX)
 public class MybatisProperties {
 
